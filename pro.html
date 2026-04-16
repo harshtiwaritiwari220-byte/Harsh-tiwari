@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HARSH | Global Gaming Exchange</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #f3ba2f; --bg: #03050a; --panel: #0d121f; --neon-blue: #00d2ff; }
+        body { font-family: 'Rajdhani', sans-serif; background-color: var(--bg); color: white; overflow-x: hidden; }
+        .font-cyber { font-family: 'Orbitron', sans-serif; }
+        
+        /* 1000 Cr. UI: Neural Glass & Neon */
+        .glass-module { background: var(--panel); border: 1px solid rgba(255,255,255,0.05); border-radius: 30px; position: relative; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        .glass-module:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 15px 50px rgba(0,0,0,0.8); }
+        
+        .market-tag { background: linear-gradient(90deg, #f3ba2f, #f0a500); color: black; font-weight: 900; padding: 2px 10px; border-radius: 6px; font-size: 8px; text-transform: uppercase; }
+        
+        /* Rotation Animation like Esports Broadcast */
+        @keyframes rotation { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .rotation-bg { position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: conic-gradient(from 0deg, transparent, rgba(243, 186, 47, 0.05), transparent); animation: rotation 10s linear infinite; pointer-events: none; }
+    </style>
+</head>
+<body class="max-w-md mx-auto min-h-screen pb-32 border-x border-white/5">
+
+    <header class="p-6 sticky top-0 bg-[#03050a]/95 backdrop-blur-2xl z-[500] border-b border-white/5">
+        <div class="flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center font-cyber font-black text-black text-2xl shadow-[0_0_20px_rgba(255,255,255,0.3)]">H</div>
+                <div>
+                    <h1 class="text-xl font-black italic tracking-tighter">HARSH<span class="text-[#f3ba2f]">_EXCHANGE</span></h1>
+                    <p class="text-[7px] font-bold text-yellow-500 tracking-[0.3em] uppercase italic">Official Partner: Krafton & Garena Mode</p>
+                </div>
+            </div>
+            <div class="bg-black/40 px-4 py-2 rounded-xl border border-white/10">
+                <p class="text-[8px] text-gray-500 font-black italic">GLOBAL TOKEN</p>
+                <p class="text-sm font-black text-[#f3ba2f] font-pro italic tracking-tighter">₹5,000</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="p-4">
+        <div class="glass-module p-6 overflow-hidden">
+            <div class="rotation-bg"></div>
+            <div class="relative z-10 italic">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                    <h2 class="text-xs font-black uppercase tracking-widest text-[#f3ba2f]">Esports Academy AI</h2>
+                </div>
+                <div id="aiOut" class="h-32 overflow-y-auto text-sm text-gray-400 font-medium leading-relaxed italic mb-4">
+                    Bhai, main updated hoon Krafton ke server se. <br><br>
+                    <b>M416 Alert:</b> New rotation speed 5% badhi hai. <b>Sanhok Map</b> ke Boot Camp mein survival ke liye 3rd-floor drop trick seekho. 
+                </div>
+                <div class="flex gap-2">
+                    <input type="text" id="aiIn" placeholder="M416 6x Sensi Code?" class="flex-1 bg-black border border-white/10 p-4 rounded-2xl text-[10px] outline-none focus:border-[#f3ba2f] transition">
+                    <button onclick="aiProcess()" class="bg-[#f3ba2f] text-black px-6 rounded-2xl font-black text-[9px] uppercase italic">Scan</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-4 italic">
+        <div class="flex justify-between items-end mb-6 ml-2 italic">
+            <h3 class="text-[10px] font-black text-gray-500 uppercase tracking-[0.4em] italic">Pro Marketplace</h3>
+            <button class="text-[10px] font-black text-[#f3ba2f] border-b border-[#f3ba2f] italic">SELL YOUR CODE +</button>
+        </div>
+
+        <div class="space-y-4 italic">
+            <div class="glass-module p-5 flex justify-between items-center italic">
+                <div class="italic">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="market-tag">BGMI</span>
+                        <h4 class="text-sm font-black italic">GodL Sensi Clone</h4>
+                    </div>
+                    <p class="text-[9px] text-gray-500 italic">By: Harsh_Pro09 • 142 Sales</p>
+                </div>
+                <div class="text-right italic">
+                    <p class="text-sm font-black text-green-500 italic">₹29</p>
+                    <button class="bg-white/5 border border-white/10 text-[8px] font-black px-3 py-1 mt-1 rounded uppercase italic">View</button>
+                </div>
+            </div>
+
+            <div class="glass-module p-5 flex justify-between items-center italic">
+                <div class="italic">
+                    <div class="flex items-center gap-2 mb-1">
+                        <span class="market-tag" style="background: #ef4444;">FF MAX</span>
+                        <h4 class="text-sm font-black italic">One-Tap Script Logic</h4>
+                    </div>
+                    <p class="text-[9px] text-gray-500 italic">By: Legend_Harsh • 89 Sales</p>
+                </div>
+                <div class="text-right italic">
+                    <p class="text-sm font-black text-green-500 italic">₹19</p>
+                    <button class="bg-white/5 border border-white/10 text-[8px] font-black px-3 py-1 mt-1 rounded uppercase italic">View</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-4 italic">
+        <div class="bg-gradient-to-r from-yellow-500 to-yellow-800 p-8 rounded-[40px] text-black relative overflow-hidden italic">
+            <h2 class="text-3xl font-cyber font-black italic tracking-tighter leading-none italic">LEARN & <br> EARN</h2>
+            <p class="text-[10px] font-black uppercase mt-4 opacity-70 italic">Complete 10 Lessons to earn ₹500 Credit</p>
+            <div class="mt-6 flex gap-2 italic">
+                <div class="w-full bg-black/10 h-1.5 rounded-full"><div class="bg-black w-2/3 h-full rounded-full"></div></div>
+                <span class="text-[9px] font-black italic">65%</span>
+            </div>
+            <button class="mt-6 w-full py-4 bg-black text-white rounded-2xl font-black text-xs uppercase italic">Next Lesson: Recoil Physics</button>
+        </div>
+    </section>
+
+    <section class="p-4 mb-24 italic">
+        <div class="glass-module p-10 text-center border-2 border-[#f3ba2f]/20 italic">
+            <h2 class="text-4xl font-cyber font-black italic tracking-tighter mb-2 italic">PROTO<span class="text-[#f3ba2f]">_VIP</span></h2>
+            <p class="text-[9px] text-gray-500 font-black uppercase tracking-[0.3em] mb-8 italic">Neural Sensi • Private Scrims • Market Pro Badge</p>
+            <a href="upi://pay?pa=harshtiwaritiwari220@okaxis&pn=HarshTiwari&cu=INR&am=49" class="block w-full py-5 bg-[#f3ba2f] text-black rounded-3xl font-black text-xs uppercase tracking-widest shadow-2xl italic">Ecosystem Access — ₹49</a>
+        </div>
+    </section>
+
+    <footer class="fixed bottom-0 left-0 w-full bg-[#03050a]/95 backdrop-blur-3xl border-t border-white/5 flex justify-around py-6 px-4 z-[600]">
+        <button class="flex flex-col items-center gap-1 text-[#f3ba2f] italic">
+            <span class="text-xl italic">🏛️</span>
+            <span class="text-[7px] font-black uppercase italic">Hub</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-gray-400 italic">
+            <span class="text-xl italic">💎</span>
+            <span class="text-[7px] font-black uppercase italic">Market</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-gray-400 italic">
+            <span class="text-xl italic">🏆</span>
+            <span class="text-[7px] font-black uppercase italic">Scrims</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-gray-400 italic">
+            <span class="text-xl italic">💼</span>
+            <span class="text-[7px] font-black uppercase italic">Wallet</span>
+        </button>
+    </footer>
+
+    <script>
+        function aiProcess() {
+            const val = document.getElementById('aiIn').value.toLowerCase();
+            const out = document.getElementById('aiOut');
+            out.innerHTML = "<span class='text-[#f3ba2f] animate-pulse italic'>Accessing Neural Database... Fetching Global Metadata...</span>";
+            
+            setTimeout(() => {
+                if(val.includes('m416')) {
+                    out.innerHTML = "<b class='text-white italic'>M416 GLOBAL PROTOCOL:</b><br> Recoil pattern is 95% predictable with <b>Half Grip</b>. 6x spray logic is best at 145% ADS. For 5-finger claw, use 'Jiggle-Peek' method. Control codes are available in the Market.";
+                } else if(val.includes('sensi')) {
+                    out.innerHTML = "<b class='text-[#f3ba2f] italic'>SENSI MARKET ANALYSIS:</b><br> Most sold code today: 'GodL_Claw_V2'. Average price: ₹29. Harsh advises keeping gyro at 400% for close-range dominance.";
+                } else {
+                    out.innerHTML = "Bhai, Harsh ka AI har second Krafton aur Garena ke patterns study karta hai. Market mein apna code bechne ke liye 'Sell' par click karein!";
+                }
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
