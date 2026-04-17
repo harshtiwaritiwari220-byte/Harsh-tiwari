@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#03050a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="data:application/json;base64,ewogICJpZCI6ICIvIiwKICAic2hvcnRfbmFtZSI6ICJIYXJzaCBHYW1pbmciLAogICJuYW1lIjogIkhhcnNoIEdhbWluZyBIdWIiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJodHRwczovL2Nkbi1pY29ucy1wbmcuZmxhdGljb24uY29tLzUxMi8yOTkxLzI5OTExNDkucG5nIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwKICAgICAgInNpemVzIjogIjUxMng1MTIiCiAgICB9CiAgXSwKICAic3RhcnRfdXJsIjogIi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwMzA1MGEiLAogICJ0aGVtZV9jb2xvciI6ICIjZjNiYTM2Igp9">
+
+    <title>HARSH | Global AI App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root { --gold: #f3ba2f; --bg: #03050a; }
+        body { font-family: 'Rajdhani', sans-serif; background-color: var(--bg); color: white; overflow-x: hidden; -webkit-tap-highlight-color: transparent; }
+        .font-pro { font-family: 'Orbitron', sans-serif; }
+        
+        /* App Style Glass */
+        .app-card { background: linear-gradient(145deg, #0d121f, #05070a); border: 1px solid rgba(255,255,255,0.05); border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        /* Install Button Glow */
+        #installBtn { display: none; background: var(--gold); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(243, 186, 47, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(243, 186, 47, 0); } 100% { box-shadow: 0 0 0 0 rgba(243, 186, 47, 0); } }
+    </style>
+</head>
+<body class="max-w-md mx-auto min-h-screen pb-32">
+
+    <header class="p-6 sticky top-0 bg-[#03050a]/90 backdrop-blur-3xl z-[500] border-b border-white/5 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center font-pro text-2xl text-black">H</div>
+            <div>
+                <h1 class="text-xl font-black italic italic italic">HARSH<span class="text-[#f3ba2f] italic italic">_PROTOCOL</span></h1>
+                <p class="text-[7px] font-bold text-green-500 tracking-[0.3em] uppercase italic">App Mode Active</p>
+            </div>
+        </div>
+        <button id="installBtn" class="px-4 py-2 rounded-lg text-[10px] font-black text-black uppercase italic">Install App</button>
+    </header>
+
+    <section class="p-4">
+        <div class="app-card p-8 relative overflow-hidden italic">
+            <div class="flex items-center gap-2 mb-6 italic">
+                <span class="w-2 h-2 bg-yellow-500 rounded-full italic"></span>
+                <h2 class="text-xs font-black uppercase tracking-widest font-pro italic">Esports Neural Core</h2>
+            </div>
+            
+            <div id="chatBox" class="h-48 overflow-y-auto text-sm text-gray-400 font-medium mb-6 space-y-4 italic">
+                <p class="bg-white/5 p-3 rounded-2xl italic">System: Harsh AI Hub mein swagat hai. Main Krafton aur Garena ke servers se connected hoon. Kuch pucho...</p>
+            </div>
+
+            <div class="flex gap-2 italic">
+                <input type="text" id="userInput" placeholder="Ex: M416 secret attachments?" class="flex-1 bg-black/60 border border-white/10 p-4 rounded-2xl text-[11px] outline-none focus:border-[#f3ba2f] text-white">
+                <button onclick="askAI()" class="bg-[#f3ba2f] text-black px-6 rounded-2xl font-black text-[10px] uppercase italic">Ask</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="p-4 italic">
+        <h3 class="text-[10px] font-black text-gray-500 uppercase tracking-[0.4em] mb-4 ml-2 italic">Global Marketplace</h3>
+        <div class="app-card p-5 flex justify-between items-center italic">
+            <div class="flex gap-4 items-center italic">
+                <div class="w-10 h-10 bg-yellow-500/10 rounded-xl flex items-center justify-center text-xl italic">📦</div>
+                <div class="italic">
+                    <h4 class="text-sm font-black italic">VIP Control Code</h4>
+                    <p class="text-[8px] text-gray-500 italic">Seller: Harsh_Tiwari</p>
+                </div>
+            </div>
+            <div class="text-right italic">
+                <p class="text-xs font-black text-green-500 italic">₹49</p>
+                <a href="upi://pay?pa=harshtiwaritiwari220@okaxis&pn=HarshTiwari&cu=INR&am=49" class="text-[8px] font-black bg-white text-black px-3 py-1.5 mt-1 rounded-lg block italic">Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+    <nav class="fixed bottom-0 left-0 w-full bg-[#03050a]/95 backdrop-blur-3xl border-t border-white/5 flex justify-around py-6 px-4 z-[600]">
+        <div class="flex flex-col items-center text-[#f3ba2f] italic"><span class="text-2xl italic">⚡</span><span class="text-[8px] font-black uppercase italic">Home</span></div>
+        <div class="flex flex-col items-center text-gray-600 italic"><span class="text-2xl italic">💎</span><span class="text-[8px] font-black uppercase italic">Market</span></div>
+        <div class="flex flex-col items-center text-gray-600 italic"><span class="text-2xl italic">👤</span><span class="text-[8px] font-black uppercase italic">Profile</span></div>
+    </nav>
+
+    <script>
+        // PWA Installation Logic
+        let deferredPrompt;
+        const installBtn = document.getElementById('installBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            installBtn.style.display = 'block';
+        });
+
+        installBtn.addEventListener('click', async () => {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                const { outcome } = await deferredPrompt.userChoice;
+                if (outcome === 'accepted') {
+                    installBtn.style.display = 'none';
+                }
+                deferredPrompt = null;
+            }
+        });
+
+        // AI Chat Logic
+        function askAI() {
+            const input = document.getElementById('userInput').value.toLowerCase();
+            const box = document.getElementById('chatBox');
+            if(!input) return;
+
+            box.innerHTML += `<p class="bg-yellow-500/10 p-3 rounded-2xl text-[#f3ba2f] ml-6 italic"><b>You:</b> ${input}</p>`;
+            
+            setTimeout(() => {
+                let res = "Bhai, Harsh ka Neural AI iska data analyze kar raha hai. Krafton ke server ke hisaab se <b>M416</b> ke liye Half Grip best hai. Sensi 145% rakho.";
+                if(input.includes('akm')) res = "AKM Mastery: Compensator use karo aur Crouch-Spam technique se recoil zero karo.";
+                
+                box.innerHTML += `<p class="bg-white/5 p-3 rounded-2xl italic"><b>AI:</b> ${res}</p>`;
+                box.scrollTop = box.scrollHeight;
+                document.getElementById('userInput').value = "";
+            }, 800);
+        }
+
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('data:text/javascript;base64,c2VsZi5hZGRFdmVudExpc3RlbmVyKCdmZXRjaCcsIGZ1bmN0aW9uKGV2ZW50KSB7IH0pOw==');
+        }
+    </script>
+</body>
+</html>
